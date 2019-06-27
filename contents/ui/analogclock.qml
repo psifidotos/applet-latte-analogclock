@@ -2,6 +2,7 @@
  *   Copyright 2012 Viranch Mehta <viranch.mehta@gmail.com>
  *   Copyright 2012 Marco Martin <mart@kde.org>
  *   Copyright 2013 David Edmundson <davidedmundson@kde.org>
+ *   Copyright 2019 Michail Vourlakos <mvourlakos@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
