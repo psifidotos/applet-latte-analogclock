@@ -20,10 +20,10 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 import org.kde.kirigami 2.5 as Kirigami
 
-
 Kirigami.FormLayout {
     property alias cfg_showSecondHand: showSecondHandCheckBox.checked
     property alias cfg_showTimezoneString: showTimezoneCheckBox.checked
+    property alias cfg_thicknessPadding: thickPaddingSpn.value
 
     anchors {
         left: parent.left
@@ -33,10 +33,21 @@ Kirigami.FormLayout {
     CheckBox {
         id: showSecondHandCheckBox
         text: i18n("Show seconds hand")
-        Kirigami.FormData.label: i18n("General:")
+        Kirigami.FormData.label: i18n("Appearance:")
     }
     CheckBox {
         id: showTimezoneCheckBox
         text: i18n("Show time zone")
+    }
+
+    SpinBox{
+        id: thickPaddingSpn
+        from: 0
+        to: 64
+        Kirigami.FormData.label: i18n("Thickness padding:")
+
+        textFromValue: function(value) {
+            return value + " " + i18nc("pixels","px.");
+        }
     }
 }
