@@ -43,7 +43,7 @@ Kirigami.FormLayout {
     SpinBox{
         id: thickPaddingSpn
         from: 0
-        to: 64
+        to: 96
         Kirigami.FormData.label: i18n("Thickness padding:")
 
         textFromValue: function(value) {
