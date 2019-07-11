@@ -28,6 +28,8 @@ import QtQuick.Layouts 1.1
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
 
+import "calendar" as LocalCalendar
+
 Item {
     id: analogclock
 
@@ -249,7 +251,7 @@ Item {
             }
         }
     }
-    Plasmoid.fullRepresentation: PlasmaCalendar.MonthView {
+    Plasmoid.fullRepresentation: LocalCalendar.MonthView {
         Layout.minimumWidth: units.gridUnit * 20
         Layout.minimumHeight: units.gridUnit * 20
 
