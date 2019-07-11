@@ -254,6 +254,8 @@ Item {
         Layout.minimumHeight: units.gridUnit * 20
 
         today: dataSource.data["Local"]["DateTime"]
+
+        borderOpacity: plasmoid.configuration.drawCalendarLines ? 0.4 : 0
     }
 
 }
