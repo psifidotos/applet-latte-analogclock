@@ -87,6 +87,12 @@ Item {
 
         //! Latte Connection
         property QtObject latteBridge: null // current Latte v0.9 API
+
+        onLatteBridgeChanged: {
+            if (latteBridge) {
+                latteBridge.actions.setProperty(plasmoid.id, "latteSideColoringEnabled", false);
+            }
+        }
         //!
 
         MouseArea {
