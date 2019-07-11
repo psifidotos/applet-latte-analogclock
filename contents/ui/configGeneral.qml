@@ -24,6 +24,7 @@ import org.kde.kirigami 2.5 as Kirigami
 Kirigami.FormLayout {
     property alias cfg_showSecondHand: showSecondHandCheckBox.checked
     property alias cfg_showTimezoneString: showTimezoneCheckBox.checked
+    property alias cfg_circleStyle: circleStyleCheckBox.checked
     property alias cfg_drawCalendarLines: calendarLinesCheckBox.checked
     property alias cfg_thicknessPadding: thickPaddingSpn.value
 
@@ -41,6 +42,12 @@ Kirigami.FormLayout {
         id: showTimezoneCheckBox
         text: i18n("Show time zone")
     }
+
+    CheckBox {
+        id: circleStyleCheckBox
+        text: i18n("Use circle style for highlights")
+    }
+
     CheckBox {
         id: calendarLinesCheckBox
         text: i18n("Draw calendar lines")

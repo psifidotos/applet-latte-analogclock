@@ -39,6 +39,7 @@ PinchArea {
 
     property date showDate: new Date()
 
+    property bool circleStyle: true
     property int borderWidth: 1
     property real borderOpacity: 0.4
 
@@ -246,6 +247,7 @@ PinchArea {
 
             previousLabel: i18nd("libplasma5", "Previous Month")
             nextLabel: i18nd("libplasma5", "Next Month")
+            circleStyle: root.circleStyle
 
             onPrevious: calendarBackend.previousMonth()
             onNext: calendarBackend.nextMonth()
@@ -274,6 +276,7 @@ PinchArea {
 
             previousLabel: i18nd("libplasma5", "Previous Year")
             nextLabel: i18nd("libplasma5", "Next Year")
+            circleStyle: root.circleStyle
 
             onPrevious: calendarBackend.previousYear()
             onNext: calendarBackend.nextYear()
@@ -307,6 +310,7 @@ PinchArea {
 
             previousLabel: i18nd("libplasma5", "Previous Decade")
             nextLabel: i18nd("libplasma5", "Next Decade")
+            circleStyle: root.circleStyle
 
             onPrevious: calendarBackend.previousDecade()
             onNext: calendarBackend.nextDecade()

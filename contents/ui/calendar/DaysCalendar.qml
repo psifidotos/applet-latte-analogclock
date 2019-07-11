@@ -47,6 +47,7 @@ Item {
     property int columns
 
     property bool showWeekNumbers
+    property bool circleStyle: true
 
     onShowWeekNumbersChanged: canvas.requestPaint()
 
@@ -329,6 +330,7 @@ Item {
                 id: delegate
                 width: daysCalendar.cellWidth
                 height: daysCalendar.cellHeight
+                circleStyle: daysCalendar.circleStyle
 
                 onClicked: daysCalendar.activated(index, model, delegate)
 

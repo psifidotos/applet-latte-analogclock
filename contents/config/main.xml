@@ -19,6 +19,9 @@
     <entry name="drawCalendarLines" type="Bool">
         <default>false</default>
     </entry>
+    <entry name="circleStyle" type="Bool">
+        <default>true</default>
+    </entry>
   </group>
 
 </kcfg>

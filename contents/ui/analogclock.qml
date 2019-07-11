@@ -258,6 +258,7 @@ Item {
         today: dataSource.data["Local"]["DateTime"]
 
         borderOpacity: plasmoid.configuration.drawCalendarLines ? 0.4 : 0
+        circleStyle: plasmoid.configuration.circleStyle
     }
 
 }

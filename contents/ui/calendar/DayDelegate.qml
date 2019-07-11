@@ -2,6 +2,7 @@
  * Copyright 2013 Heena Mahour <heena393@gmail.com>
  * Copyright 2013 Sebastian Kügler <sebas@kde.org>
  * Copyright 2015 Kai Uwe Broulik <kde@privat.broulik.de>
+ * Copyright 2019 Michail Vourlakos <mvourlakos@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -27,6 +28,8 @@ MouseArea {
     id: dayStyle
 
     hoverEnabled: true
+
+    property bool circleStyle: true
 
     signal activated
 
@@ -70,15 +73,17 @@ MouseArea {
     Rectangle {
         id: todayRect
         anchors.centerIn: parent
-        width: 0.8 * Math.min(parent.width, parent.height)
-        height: width
-        radius: width
+        width: circleStyle ? 0.9 * Math.min(parent.width, parent.height) : parent.width
+        height: circleStyle ? width : parent.height
+        radius: circleStyle ? width : 0
 
         opacity: {
-            if (selected && today) {
+            if (dayStyle.containsMouse) {
                 1
+            } else if (selected && today) {
+                0.9
             } else if (today) {
-                0.85
+                0.8
             } else {
                 0
             }
@@ -90,9 +95,9 @@ MouseArea {
     Rectangle {
         id: highlightDate
         anchors.centerIn: todayRect
-        width: Math.min(todayRect.width, todayRect.height)
-        height: width
-        radius: width
+        width: circleStyle ? Math.min(todayRect.width, todayRect.height) : todayRect.width
+        height: circleStyle ? width : todayRect.height
+        radius: circleStyle ? width : 0
 
         opacity: {
             if (selected) {
@@ -131,12 +136,13 @@ MouseArea {
         wrapMode: Text.NoWrap
         elide: Text.ElideRight
         fontSizeMode: Text.HorizontalFit
+        font.bold: (dayStyle.today || dayStyle.containsMouse || selected)
         font.pixelSize: Math.max(theme.smallestFont.pixelSize, Math.floor(daysCalendar.cellHeight / 3))
         // Plasma component set point size, this code wants to set pixel size
         // Setting both results in a warning
         // -1 is an undocumented same as unset (see qquickvaluetypes)
         font.pointSize: -1
-        color: today ? theme.backgroundColor : theme.textColor
+        color: today ? theme.highlightedTextColor/*theme.backgroundColor*/ : theme.textColor
         Behavior on color {
             ColorAnimation { duration: units.shortDuration * 2 }
         }
