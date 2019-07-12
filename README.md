@@ -13,7 +13,12 @@ This is a Plasma 5 applet based on Plasma original analog clock but it supports 
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/Xnde8vk.png" width="580"><br/>
+<img src="https://i.imgur.com/lFlOpCZ.png" width="580"><br/>
+<i>New Circular Calendar style</i>
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/fwfkely.png" width="580"><br/>
 <i>Settings</i>
 </p>
 
