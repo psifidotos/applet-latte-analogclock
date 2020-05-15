@@ -88,7 +88,7 @@ Item {
         Layout.minimumHeight: latteBridge ? -1 : (plasmoid.formFactor === PlasmaCore.Types.Vertical ? representation.width : units.gridUnit)
 
         //! Latte Connection
-        property Item latteBridge: null // current Latte v0.9 API
+        property QtObject latteBridge: null // current Latte v0.9 API
 
         onLatteBridgeChanged: {
             if (latteBridge) {
